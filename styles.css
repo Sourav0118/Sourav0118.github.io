@@ -56,3 +56,41 @@ footer {
     background-color: #333;
     color: #fff;
 }
+
+/* Add these styles to styles.css */
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.timeline-event {
+    padding: 1rem 0;
+    border-left: 2px solid #4CAF50;
+    margin-left: 2rem;
+    position: relative;
+}
+
+.timeline-event h3 {
+    color: #4CAF50;
+    margin: 0;
+    padding-bottom: 0.5rem;
+}
+
+.timeline-event::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-color: #4CAF50;
+    border-radius: 50%;
+    position: absolute;
+    left: -6px;
+    top: 1rem;
+}
+
+.timeline-event p {
+    margin: 0.5rem 0;
+}
+
