@@ -1,3 +1,4 @@
+/* Dark theme */
 * {
     margin: 0;
     padding: 0;
@@ -6,15 +7,16 @@
 
 body {
     font-family: Arial, sans-serif;
-    color: #333;
+    color: #f1f1f1;
+    background-color: #121212;
     line-height: 1.6;
 }
 
 header {
-    background-color: #4CAF50;
-    color: #fff;
+    background-color: #1c1c1c;
+    color: #4CAF50;
     text-align: center;
-    padding: 1rem;
+    padding: 1.5rem;
 }
 
 header h1 {
@@ -27,18 +29,20 @@ header p {
 
 nav a {
     margin: 0 1rem;
-    color: #fff;
+    color: #4CAF50;
     text-decoration: none;
 }
 
 nav a:hover {
-    text-decoration: underline;
+    color: #66BB6A;
 }
 
 section {
     padding: 2rem;
     max-width: 800px;
     margin: 1rem auto;
+    background-color: #1e1e1e;
+    border-radius: 8px;
 }
 
 h2 {
@@ -49,15 +53,6 @@ h2 {
 .project, .publication {
     margin-bottom: 1.5rem;
 }
-
-footer {
-    text-align: center;
-    padding: 1rem;
-    background-color: #333;
-    color: #fff;
-}
-
-/* Add these styles to styles.css */
 
 .timeline {
     position: relative;
@@ -94,3 +89,9 @@ footer {
     margin: 0.5rem 0;
 }
 
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #1c1c1c;
+    color: #4CAF50;
+}
