@@ -3,99 +3,457 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sourav Saini - Computer Vision and NLP Researcher</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Saurav.</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #1c1f24;
+            --bg-secondary: #2a2e35;
+            --text-primary: #e2e8f0;
+            --text-secondary: #94a3b8;
+            --accent: #38bdf8;
+            --timeline: #38bdf8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .header {
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--bg-primary);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--bg-secondary);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--text-primary);
+        }
+
+        .nav {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav a:hover {
+            color: var(--accent);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 4rem;
+            align-items: center;
+            padding: 4rem 0;
+        }
+
+        .hero-image {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 8px;
+        }
+
+        .highlight {
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        .hero-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        .hero-content p {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            padding: 0.5rem;
+            border: 1px solid var(--text-secondary);
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--accent);
+            border-color: var(--accent);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin: 4rem 0 2rem;
+            color: var(--text-primary);
+        }
+
+        .publications {
+            margin: 2rem 0;
+        }
+
+        .publication-item {
+            background: var(--bg-secondary);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .publication-title {
+            color: var(--accent);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .publication-authors {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .publication-venue {
+            color: var(--text-primary);
+            font-size: 0.9rem;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background: var(--timeline);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background-color: var(--timeline);
+            border-radius: 50%;
+            top: 15px;
+            right: -8px;
+        }
+
+        .timeline-item.left {
+            left: 0;
+        }
+
+        .timeline-item.right {
+            left: 50%;
+        }
+
+        .timeline-item.right::before {
+            left: -8px;
+        }
+
+        .timeline-content {
+            padding: 1.5rem;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+        }
+
+        .timeline-date {
+            color: var(--accent);
+            font-size: 0.9rem;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .skill-tag {
+            background: var(--bg-primary);
+            color: var(--text-secondary);
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+        
+        .projects, .achievements, .positions {
+            margin: 2rem 0;
+        }
+        
+        .project-item, .achievements ul, .positions ul {
+            background: var(--bg-secondary);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .project-item h3, .achievements h3, .positions h3 {
+            color: var(--accent);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .achievements ul, .positions ul {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+        }
+        
+        .achievements li, .positions li {
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+
+            .timeline::after {
+                left: 31px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .timeline-item.right {
+                left: 0;
+            }
+
+            .timeline-item::before {
+                left: 23px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Sourav Saini</h1>
-        <p>Computer Vision and NLP Researcher | Final Year B.Tech at IIT Jammu</p>
-        <nav>
-            <a href="#about">About Me</a>
-            <a href="#skills">Skills</a>
-            <a href="#timeline">Timeline</a>
-            <a href="#projects">Projects</a>
-            <a href="#publications">Publications</a>
-            <a href="#contact">Contact</a>
+    <header class="header">
+        <div class="logo">Saurav Saini</div>
+        <nav class="nav">
+            <a href="#about">about</a>
+            <a href="#experience">experience</a>
+            <a href="#publications">publications</a>
+            <a href="#contact">contact</a>
+            <a href="#" id="theme-toggle"><i class="fas fa-moon"></i></a>
         </nav>
     </header>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>I am a final-year Computer Science student at IIT Jammu with expertise in Computer Vision and NLP. My research spans healthcare applications, mental health detection, and innovative depth estimation. I am passionate about developing impactful AI solutions and have several publications in top-tier conferences.</p>
-    </section>
+    <div class="container">
+        <section class="hero">
+            <!-- TODO: Replace with your professional photo -->
+            <img src="/api/placeholder/400/400" alt="Profile" class="hero-image">
+            <div class="hero-content">
+                <h1>hello there!</h1>
+                <p>I'm a Computer Science student at IIT Jammu with a passion for research in AI/ML. As the <span class="highlight">only undergraduate researcher</span> at Yale University's medical imaging lab, I've contributed to cutting-edge research in healthcare AI. My work spans medical imaging, natural language processing, and machine learning applications.</p>
+                <div class="social-links">
+                    <a href="https://linkedin.com/in/sourav-saini2003" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/Sourav0118" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="mailto:2021ucs0118@iitjammu.ac.in" title="Email"><i class="fas fa-envelope"></i></a>
+                    <!-- TODO: Add your resume link -->
+                    <a href="#" title="Resume"><i class="fas fa-file-alt"></i></a>
+                </div>
+            </div>
+        </section>
 
-    <section id="skills">
-        <h2>Skills</h2>
-        <ul>
-            <li>Deep Learning for Medical Imaging</li>
-            <li>Time Series Analysis</li>
-            <li>Natural Language Processing</li>
-            <li>Reinforcement Learning</li>
-            <li>Model Optimization and Deployment</li>
-        </ul>
-    </section>
+        <h2 class="section-title">PUBLICATIONS</h2>
+        <div class="publications">
+            <div class="publication-item">
+                <div class="publication-title">High-dose-rate Brachytherapy Planning with Dendrite Cross-Attention UNet</div>
+                <div class="publication-authors">Saini Sourav, Li Zhen, Liu Xiaofeng</div>
+                <div class="publication-venue">SPIE Medical Imaging Conference, 2024</div>
+                <!-- TODO: Add paper link -->
+                <a href="#" class="highlight">Paper Link</a>
+            </div>
+            
+            <div class="publication-item">
+                <div class="publication-title">NTIRE 2024 Challenge on HR Depth from Images of Specular and Transparent Surfaces</div>
+                <div class="publication-authors">Pierluigi Zama Ramirez, Fabio Tosi, Saini Sourav (contributor)</div>
+                <div class="publication-venue">Proceedings of the IEEE/CVF CVPR Workshop, 2024</div>
+                <!-- TODO: Add paper link -->
+                <a href="#" class="highlight">Paper Link</a>
+            </div>
 
-    <section id="timeline">
-        <h2>Timeline</h2>
+            <div class="publication-item">
+                <div class="publication-title">Multiscale Encoder and Omni-Dimensional Dynamic Convolution Enrichment in nnU-Net for Brain Tumor Segmentation</div>
+                <div class="publication-authors">Mistry Sahaj, Saini Sourav, Aashray Gupta, Aayush Gupta</div>
+                <div class="publication-venue">MICCAI BrainLesion Workshop, 2023</div>
+                <!-- TODO: Add paper link -->
+                <a href="#" class="highlight">Paper Link</a>
+            </div>
+        </div>
+
+        <h2 class="section-title">Experiences</h2>
         <div class="timeline">
-            <div class="timeline-event">
-                <h3>Research Intern</h3>
-                <p><strong>University of Liverpool</strong> | Jan 2024 - Present</p>
-                <p>Conducted research on early detection of anorexia using Reddit posts, achieving 85.2% accuracy.</p>
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <h3>Research Intern - University of Liverpool</h3>
+                    <p class="timeline-date">Jan 2024 - Present</p>
+                    <p>Leading research on early detection of anorexia using Reddit posts, achieving 85.2% accuracy</p>
+                    <!-- TODO: Add project/lab link -->
+                    <p><a href="#" class="highlight">Project Link</a></p>
+                    <div class="skills-container">
+                        <span class="skill-tag">PyTorch</span>
+                        <span class="skill-tag">NLP</span>
+                        <span class="skill-tag">Deep Learning</span>
+                        <span class="skill-tag">Time Series Analysis</span>
+                        <span class="skill-tag">LLM</span>
+                        <span class="skill-tag">Classification</span>
+                    </div>
+                </div>
             </div>
-            <div class="timeline-event">
-                <h3>Research Affiliate</h3>
-                <p><strong>Yale University</strong> | May 2024 - Sep 2024</p>
-                <p>Developed Dendrite Cross-Attention UNet (DCA-UNet) to improve dose prediction for cervical cancer.</p>
+
+            <div class="timeline-item right">
+                <div class="timeline-content">
+                    <h3>Research Affiliate - Yale University</h3>
+                    <p class="timeline-date">May 2024 - September 2024</p>
+                    <p>Only undergraduate researcher in the lab, developed novel DCA-UNet architecture</p>
+                    <!-- TODO: Add project/lab link -->
+                    <p><a href="#" class="highlight">Project Link</a></p>
+                    <div class="skills-container">
+                        <span class="skill-tag">PyTorch</span>
+                        <span class="skill-tag">Medical Imaging</span>
+                        <span class="skill-tag">Computer Vision</span>
+                        <span class="skill-tag">PyTorch</span>
+                        <span class="skill-tag">SPIE Medical Imaging 2025</span>
+                        <span class="skill-tag">Deep Learning</span>
+                    </div>
+                </div>
             </div>
-            <div class="timeline-event">
-                <h3>Research Student</h3>
-                <p><strong>University of Pennsylvania</strong> | May 2023 - Aug 2023</p>
-                <p>Created a brain tumor segmentation model using nnU-Net with multi-scale attention for enhanced accuracy.</p>
-            </div>
-            <div class="timeline-event">
-                <h3>Silver Medal - Chandrayaan 2 Moon Mapping</h3>
-                <p><strong>ISRO, Inter IIT Tech Meet</strong> | Feb 2023</p>
-                <p>Awarded Silver Medal for enhancing Chandrayaan 2's moon surface images with Real-ESRGAN, achieving 16x resolution enhancement.</p>
-            </div>
-            <div class="timeline-event">
-                <h3>Speaker and Event Lead</h3>
-                <p><strong>AI/ML Week Workshop, DeepLearning.ai</strong> | 2023</p>
-                <p>Led workshops on AI/ML and served as Event Head, sharing insights on applied AI in computer vision and NLP.</p>
+
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <h3>Research Student - UPenn</h3>
+                    <p class="timeline-date">May 2023 - August 2023</p>
+                    <p>Developed novel brain tumor segmentation algorithm with MICCAI publication</p>
+                    <!-- TODO: Add project link -->
+                    <p><a href="#" class="highlight">Project Link</a></p>
+                    <div class="skills-container">
+                        <span class="skill-tag">nnU-Net</span>
+                        <span class="skill-tag">Medical AI</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">PyTorch</span>
+                        <span class="skill-tag">Computer Vision</span>
+                        <span class="skill-tag">Brain Tumor Segmentation</span>
+                        <span class="skill-tag">MICCAI</span>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
-
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="project">
-            <h3>Depth Estimation for Transparent Surfaces (NTIRE 2024)</h3>
-            <p>Developed the 'Masked-Depth-Anything' model to handle depth estimation for specular surfaces using custom MaskLoss. Presented at NTIRE 2024 CVPR workshop.</p>
+        
+        <h2 class="section-title">Education</h2>
+        <div class="publications">
+            <div class="publication-item">
+                <h3>B.Tech.</h3>
+                <p class="timeline-date">Sep 2021 - May 2025</p>
+                <p>Indian Institute of Technology Jammu</p>
+                <p>Computer Science and Engineering</p>
+                <p>CGPA: 8.59/10</p>
+                <!-- TODO: Add department link -->
+            </div>
+            
+            <div class="publication-item">
+                <h3>High School</h3>
+                <p class="timeline-date">April 2020 - March 2021</p>
+                <p>Army Public School, Pune</p>
+                <p>Science and Mathematics</p>
+                <p>Percentage: 96%</p>
+                <!-- TODO: Add department link -->
+            </div>
         </div>
-        <div class="project">
-            <h3>Anorexia Detection on Reddit (University of Liverpool)</h3>
-            <p>Achieved 85.2% accuracy in early detection of anorexia through a temporal and semantic classifier on social media data. Paper submitted to COLING 2025.</p>
+        
+        <h2 class="section-title">Projects</h2>
+        <div class="projects">
+            <div class="project-item">
+                <h3>Transparent Surface Depth Estimation</h3>
+                <p class="timeline-date">NTIRE 2024 | March 2024</p>
+                <p>Developed a custom model to estimate depth in challenging transparent surfaces, incorporating techniques like MaskLoss and multi-loss balancing. Part of NTIRE 2024 CVPR Challenge.</p>
+            </div>
+            <div class="project-item">
+                <h3>Chandrayaan Moon Mapping</h3>
+                <p class="timeline-date">ISRO, IIT Tech Meet | February 2023</p>
+                <p>Applied deep learning to enhance Chandrayaan 2 imagery, achieving significant resolution boosts and optimized image handling.</p>
+            </div>
+            <div class="project-item">
+                <h3>BERT-based Question Answering</h3>
+                <p class="timeline-date">DevRev, IIT Tech Meet | January 2023</p>
+                <p>Led development of an optimized BERT model for rapid response times, enhancing model efficiency and accuracy.</p>
+            </div>
         </div>
-    </section>
+        <h2 class="section-title">Achievements</h2>
+        <div class="achievements">
+            <ul>
+                <li>Won Silver in IIT Kanpur Tech Meet with innovative solutions in imaging and AI.</li>
+                <li>Recognized for representation in international events and exemplary contributions to IIT Jammu.</li>
+                <li>Secured top placement in basketball at IIT Jammu's sports fest.</li>
+            </ul>
+        </div>
+        <h2 class="section-title">Positions of Responsibility</h2>
+        <div class="positions">
+            <ul>
+                <li>Led IIT Jammu’s contingent at Inter IIT Tech Meet 12.0.</li>
+                <li>Served as Team Lead for Adobe’s technical challenge at Inter IIT Meet.</li>
+                <li>Organized and hosted workshops for DeepLearning.ai's AI/ML events.</li>
+                <li>Oversaw and led technical initiatives in AI/ML and coding club activities.</li>
+            </ul>
+        </div>
 
-    <section id="publications">
-        <h2>Publications</h2>
-        <ul>
-            <li><strong>Saini, S.</strong>, Li, Z., Liu, X. (2024). High-dose-rate Brachytherapy Planning with Dendrite Cross-Attention UNet. <em>SPIE Medical Imaging Conference.</em></li>
-            <li>Contributor to NTIRE 2024 Challenge on Depth Estimation, <em>CVPR Workshop</em>.</li>
-        </ul>
-    </section>
+    </div>
 
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <p>Email: <a href="mailto:2021ucs0118@iitjammu.ac.in">2021ucs0118@iitjammu.ac.in</a></p>
-        <p>LinkedIn: <a href="https://linkedin.com/in/sourav-saini2003">linkedin.com/in/sourav-saini2003</a></p>
-        <p>GitHub: <a href="https://github.com/Sourav0118">github.com/Sourav0118</a></p>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 Sourav Saini</p>
-    </footer>
+    <!-- TODO: Add your analytics code here -->
+    <!-- TODO: Add your custom scripts here -->
 </body>
 </html>
