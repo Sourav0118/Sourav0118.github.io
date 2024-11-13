@@ -5,15 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Saurav.</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <script>
-        const themeToggle = document.getElementById('theme-toggle');
-        themeToggle.addEventListener('click', () => {
-            document.body.classList.toggle('light-theme');
-            themeToggle.innerHTML = document.body.classList.contains('light-theme')
-                ? '<i class="fas fa-sun"></i>'
-                : '<i class="fas fa-moon"></i>';
-        });
-    </script>
 
     <style>
         :root {
@@ -303,10 +294,11 @@
     <header class="header">
         <div class="logo">Saurav Saini</div>
         <nav class="nav">
-<!--             <a href="#about">Hello there!</a> -->
+            <a href="#about">Hello there!</a>
             <a href="#publications">Publications</a>
             <a href="#experience">Experiences</a>
             <a href="#education">Education</a>
+            <a href="#contact">Contact</a>
             <button id="theme-toggle" aria-label="Toggle Theme"><i class="fas fa-moon"></i></button>
         </nav>
     </header>
@@ -315,10 +307,10 @@
         <section class="hero">
             <!-- TODO: Replace with your professional photo -->
             <img src="./sourav.jpg" alt="Profile" class="hero-image">
-            <div class="hero-content">
+            <div id = "about" class="hero-content">
                 <h1>Hello there!</h1>
                 <p>I'm a Computer Science student at IIT Jammu with a passion for research in AI/ML. As the <span class="highlight">only undergraduate researcher</span> at Yale University's medical imaging lab, I've contributed to cutting-edge research in healthcare AI. My work spans medical imaging, natural language processing, and machine learning applications.</p>
-                <div class="social-links">
+                <div id = "contact" class="social-links">
                     <a href="https://linkedin.com/in/sourav-saini2003" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
                     <a href="https://github.com/Sourav0118" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
                     <a href="mailto:2021ucs0118@iitjammu.ac.in" title="Email"><i class="fas fa-envelope"></i></a>
@@ -356,7 +348,7 @@
         </div>
 
         <h2 class="section-title">Experiences</h2>
-        <div class="timeline">
+        <div id = "experience" class="timeline">
             <div class="timeline-item left">
                 <div class="timeline-content">
                     <h3>Research Intern - University of Liverpool</h3>
@@ -414,7 +406,7 @@
         </div>
         
         <h2 class="section-title">Education</h2>
-        <div class="publications">
+        <div id = "education" class="publications">
             <div class="publication-item">
                 <h3>B.Tech.</h3>
                 <p class="timeline-date">Sep 2021 - May 2025</p>
@@ -474,5 +466,15 @@
 
     <!-- TODO: Add your analytics code here -->
     <!-- TODO: Add your custom scripts here -->
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('light-theme');
+            themeToggle.innerHTML = document.body.classList.contains('light-theme')
+                ? '<i class="fas fa-sun"></i>'
+                : '<i class="fas fa-moon"></i>';
+        });
+    </script>
+
 </body>
 </html>
